@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:home_nubank/pages/home/widgets/menu_app.dart';
 import 'package:home_nubank/pages/home/widgets/my_app_bar.dart';
 import 'package:home_nubank/pages/home/widgets/page_view_app.dart';
 import 'package:home_nubank/pages/home/widgets/my_dots_app.dart';
@@ -29,7 +30,7 @@ class _HomePageState extends State<HomePage> {
     }
     
     return Scaffold(
-      backgroundColor: Color(0xffA332B3),
+      backgroundColor: Colors.purple[800],
       body: Stack(
         alignment: Alignment.topCenter,
         children: <Widget>[
@@ -42,6 +43,10 @@ class _HomePageState extends State<HomePage> {
                     _showMenu ? _screenHeigth * .75 : _screenHeigth * .24;
               });
             },
+          ),
+          MenuApp(
+            top: _screenHeigth * .20,
+            showMenu: _showMenu,
           ),
           PageViewApp(
               top: _yPosition,
