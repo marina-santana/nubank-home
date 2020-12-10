@@ -35,7 +35,7 @@ class ItemMenu extends StatelessWidget {
                 ),
                 Text(
                   text,
-                  style: TextStyle(fontSize: 12),
+                  style: TextStyle(fontSize: 14),
                 ),
               ],
             ),

@@ -118,7 +118,7 @@ class MenuApp extends StatelessWidget {
                           child: Text(
                             'SAIR DO APP',
                             style: TextStyle(
-                                fontSize: 13, fontWeight: FontWeight.bold),
+                                fontSize: 14, fontWeight: FontWeight.bold),
                           ),
                           onPressed: () {},
                         ),
