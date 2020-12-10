@@ -18,7 +18,6 @@ class _HomePageState extends State<HomePage> {
     super.initState();
     _showMenu = false;
     _currentIndex = 0;
-    _yPosition = 0;
   }
 
   @override
@@ -92,10 +91,11 @@ class _HomePageState extends State<HomePage> {
                     }
               },
             ),
-          Positioned(
+           MyDotsApp(
+            showMenu: _showMenu,
             top: _screenHeigth * .70,
-            child: MyDotsApp(currentIndex: _currentIndex)
-          )
+            currentIndex: _currentIndex,
+          ),
         ]
       )
     );
