@@ -3,6 +3,7 @@ import 'package:home_nubank/pages/home/widgets/menu_app.dart';
 import 'package:home_nubank/pages/home/widgets/my_app_bar.dart';
 import 'package:home_nubank/pages/home/widgets/page_view_app.dart';
 import 'package:home_nubank/pages/home/widgets/my_dots_app.dart';
+import 'package:home_nubank/pages/home/widgets/bottom_menu.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -46,6 +47,9 @@ class _HomePageState extends State<HomePage> {
           ),
           MenuApp(
             top: _screenHeigth * .20,
+            showMenu: _showMenu,
+          ),
+          BottomMenu(
             showMenu: _showMenu,
           ),
           PageViewApp(
