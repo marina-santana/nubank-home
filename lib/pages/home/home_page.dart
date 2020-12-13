@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:home_nubank/pages/home/widgets/menu_app.dart';
-import 'package:home_nubank/pages/home/widgets/my_app_bar.dart';
-import 'package:home_nubank/pages/home/widgets/page_view_app.dart';
-import 'package:home_nubank/pages/home/widgets/my_dots_app.dart';
-import 'package:home_nubank/pages/home/widgets/bottom_menu.dart';
+import 'package:nubank_home/pages/home/widgets/bottom_menu.dart';
+import 'package:nubank_home/pages/home/widgets/menu_app.dart';
+import 'package:nubank_home/pages/home/widgets/my_app_bar.dart';
+import 'package:nubank_home/pages/home/widgets/my_dots_app.dart';
+import 'package:nubank_home/pages/home/widgets/page_view_app.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -15,7 +15,7 @@ class _HomePageState extends State<HomePage> {
   int _currentIndex;
   double _yPosition;
 
-    @override
+  @override
   void initState() {
     super.initState();
     _showMenu = false;
@@ -25,17 +25,17 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     double _screenHeigth = MediaQuery.of(context).size.height;
-
-    if(_yPosition == null){
+    if (_yPosition == null) {
       _yPosition = _screenHeigth * .24;
     }
-    
+
     return Scaffold(
       backgroundColor: Colors.purple[800],
+      extendBody: true,
       body: Stack(
         alignment: Alignment.topCenter,
         children: <Widget>[
-          MyAppBar(            
+          MyAppBar(
             showMenu: _showMenu,
             onTap: () {
               setState(() {
@@ -52,61 +52,58 @@ class _HomePageState extends State<HomePage> {
           BottomMenu(
             showMenu: _showMenu,
           ),
-          PageViewApp(
-              top: _yPosition,
-              showMenu: _showMenu,
-              onChanged: (index) {
-                setState(() {
-                  _currentIndex = index;
-                });
-              },
-              onPanUpdate: (details){
-                double positionBottomLimit = _screenHeigth * .75;
-                double positionTopLimit = _screenHeigth * .24;
-                double midlePosition = positionBottomLimit - positionTopLimit;
-                midlePosition = midlePosition / 2;
-
-                setState(() {
-                  _yPosition += details.delta.dy;
-
-                  _yPosition = _yPosition < positionTopLimit
-                      ? positionTopLimit
-                      : _yPosition;
-
-                  _yPosition = _yPosition > positionBottomLimit
-                      ? positionBottomLimit
-                      : _yPosition;
-
-                    
-                  });
-                    
-                  if (_yPosition == positionBottomLimit) {
-                    _showMenu = true;
-                  } else if (_yPosition == positionTopLimit) {
-                    _showMenu = false;
-                  }
-
-                   if (_yPosition != positionBottomLimit && details.delta.dy > 0) {
-                  _yPosition =
-                      _yPosition > positionTopLimit + midlePosition - 50
-                          ? positionBottomLimit
-                          : _yPosition;
-                    }
-
-                    if (_yPosition != positionTopLimit && details.delta.dy < 0) {
-                      _yPosition = _yPosition < positionBottomLimit - midlePosition
-                          ? positionTopLimit
-                          : _yPosition;
-                    }
-              },
-            ),
-           MyDotsApp(
+          MyDotsApp(
             showMenu: _showMenu,
             top: _screenHeigth * .70,
             currentIndex: _currentIndex,
           ),
-        ]
-      )
+          PageViewApp(
+            showMenu: _showMenu,
+            top: _yPosition,
+            onChanged: (index) {
+              setState(() {
+                _currentIndex = index;
+              });
+            },
+            onPanUpdate: (details) {
+              double positionBottomLimit = _screenHeigth * .75;
+              double positionTopLimit = _screenHeigth * .24;
+              double midlePosition = positionBottomLimit - positionTopLimit;
+              midlePosition = midlePosition / 2;
+              setState(() {
+                _yPosition += details.delta.dy;
+
+                _yPosition = _yPosition < positionTopLimit
+                    ? positionTopLimit
+                    : _yPosition;
+
+                _yPosition = _yPosition > positionBottomLimit
+                    ? positionBottomLimit
+                    : _yPosition;
+
+                if (_yPosition != positionBottomLimit && details.delta.dy > 0) {
+                  _yPosition =
+                      _yPosition > positionTopLimit + midlePosition - 50
+                          ? positionBottomLimit
+                          : _yPosition;
+                }
+
+                if (_yPosition != positionTopLimit && details.delta.dy < 0) {
+                  _yPosition = _yPosition < positionBottomLimit - midlePosition
+                      ? positionTopLimit
+                      : _yPosition;
+                }
+
+                if (_yPosition == positionBottomLimit) {
+                  _showMenu = true;
+                } else if (_yPosition == positionTopLimit) {
+                  _showMenu = false;
+                }
+              });
+            },
+          ),
+        ],
+      ),
     );
   }
 }

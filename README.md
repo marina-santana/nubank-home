@@ -1,4 +1,4 @@
-# home_nubank
+# nubank_home
 
 A new Flutter project.
 

@@ -1,4 +1,4 @@
-package com.example.home_nubank
+package com.example.nubank_home
 
 import io.flutter.embedding.android.FlutterActivity
 
