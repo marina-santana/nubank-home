@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:nubank_home/pages/home/widgets/item_menu.dart';
+import 'package:nubank_home/pages/home/widgets/menu/item_menu.dart';
 
 class MenuApp extends StatelessWidget {
   final double top;
@@ -22,10 +22,10 @@ class MenuApp extends StatelessWidget {
             physics: BouncingScrollPhysics(),
             child: Column(
               children: <Widget>[
-                Image.network(
-                  'https://webmobtuts.com/wp-content/uploads/2019/02/QR_code_for_mobile_English_Wikipedia.svg_.png',
+                Image.asset(
+                  'assets/images/qr-code.svg',
                   height: 100,
-                  color: Colors.white,
+                  // color: Colors.white,
                 ),
                 Text.rich(
                   TextSpan(
@@ -36,7 +36,7 @@ class MenuApp extends StatelessWidget {
                           style: TextStyle(fontWeight: FontWeight.bold)),
                     ],
                   ),
-                  style: TextStyle(fontSize: 15),
+                  style: TextStyle(fontSize: 12),
                 ),
                 SizedBox(
                   height: 5,
@@ -50,7 +50,7 @@ class MenuApp extends StatelessWidget {
                           style: TextStyle(fontWeight: FontWeight.bold)),
                     ],
                   ),
-                  style: TextStyle(fontSize: 15),
+                  style: TextStyle(fontSize: 12),
                 ),
                 SizedBox(
                   height: 5,
@@ -60,11 +60,11 @@ class MenuApp extends StatelessWidget {
                     text: 'Conta ',
                     children: [
                       TextSpan(
-                          text: 'xxxxxxx-x',
+                          text: '0000000-0',
                           style: TextStyle(fontWeight: FontWeight.bold)),
                     ],
                   ),
-                  style: TextStyle(fontSize: 15),
+                  style: TextStyle(fontSize: 12),
                 ),
                 SizedBox(
                   height: 25,
@@ -118,7 +118,7 @@ class MenuApp extends StatelessWidget {
                           child: Text(
                             'SAIR DO APP',
                             style: TextStyle(
-                                fontSize: 14, fontWeight: FontWeight.bold),
+                                fontSize: 10, fontWeight: FontWeight.bold),
                           ),
                           onPressed: () {},
                         ),
