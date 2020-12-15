@@ -6,7 +6,7 @@ Clone da home do nunbank feita em flutter
 
 ## Rodar app
 
-Depois de configurar a sua máquina rode o commando 
+Depois de configurar a sua máquina rode o comando 
 
 ```
     flutter run
