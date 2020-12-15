@@ -23,7 +23,7 @@ class MenuApp extends StatelessWidget {
             child: Column(
               children: <Widget>[
                 Image.asset(
-                  'assets/images/qr-code.svg',
+                  'assets/images/qr-code.png',
                   height: 100,
                   // color: Colors.white,
                 ),
