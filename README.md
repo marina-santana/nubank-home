@@ -1,6 +1,6 @@
-# Nubank
+<h1 align="center"> Nubank </h1>
 
-Clone da home do nunbank feita em flutter
+<p align="center"> Clone da home do nubank feita em flutter </p>
 
 <p align="center">
 
