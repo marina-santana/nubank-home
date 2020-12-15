@@ -2,7 +2,11 @@
 
 Clone da home do nunbank feita em flutter
 
-![video](https://github.com/marina-santana/nubank-home/blob/master/video.gif "Nubank Home")
+<p align="center">
+
+<img src="https://github.com/marina-santana/nubank-home/blob/master/video.gif" alt="Nubank Home" title="Nubank Home" />
+
+</p>
 
 ## Rodar app
 
