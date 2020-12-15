@@ -1,16 +1,18 @@
-# nubank_home
+# Nubank
 
-A new Flutter project.
+Clone da home do nunbank feita em flutter
 
-## Getting Started
+![video](https://github.com/marina-santana/nunbank-home/blob/master/video.gif "Nubank Home")
 
-This project is a starting point for a Flutter application.
+## Rodar app
 
-A few resources to get you started if this is your first Flutter project:
+Depois de configurar a sua máquina rode o commando 
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+`flutter run`
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+---
+
+Caso ela não esteja configurada leia a documentação 👇🏾
+
+- [Documentação](https://flutter.dev/docs)
+
